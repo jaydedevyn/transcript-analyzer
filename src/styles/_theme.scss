@@ -1,0 +1,10 @@
+@import './palette.scss';
+@import '~@angular/material/theming';
+@include mat-core();
+
+$ta-primary: mat-palette($ta-primary);
+$ta-accent: mat-palette($mat-pink);
+$ta-warn: mat-palette($mat-red);
+
+$ta-theme: mat-light-theme($ta-primary, $ta-accent, $ta-warn);
+@include angular-material-theme($ta-theme);

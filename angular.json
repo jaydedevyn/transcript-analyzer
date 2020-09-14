@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "transcript-analyzer"
+    }
+  },
+  "defaultProject": "transcript-analyzer",
+  "cli": {
+    "analytics": "8f8b915c-251b-49e8-aba5-a77170942644"
+  }
 }

@@ -1,0 +1,17 @@
+mat-toolbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    .filter-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        column-gap: 1em;
+
+    }
+    .sensitivity-section {
+        display: grid;
+        grid-template-columns: 2fr 5fr 1fr;
+        column-gap: 1em;
+    }
+
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Agent } from './interfaces/agent';
-import { Call } from './interfaces/call';
+import { Call, CallDetail } from './interfaces/call';
 import { CallType } from './interfaces/call-type';
 import { ApiService } from './services/api/api.service';
 
@@ -14,15 +14,25 @@ export class AppComponent implements OnInit {
 
   agents$: Observable<Agent[]> = this.apiService.getAgents();
   callTypes$: Observable<CallType[]> = this.apiService.getCallTypes();
-  call$: Observable<Call[]> = this.apiService.getCall('572a41e7a', 'f44785ceA');
+  calls$: Observable<Call[]>;
+  call$: Observable<CallDetail>;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
 
-  getCall() {
-
+  setCurrentAgent(agent: Agent) {
+    this.apiService.setCurrentAgent(agent);
   }
-  
+
+  getCalls(data: { agent: string, callType: string }) {
+    const { agent, callType } = data;
+    this.calls$ = this.apiService.getCalls(agent, callType);
+  }
+
+  getCall(callId: string) {
+    this.call$ = this.apiService.getCallById(callId)
+  }
+
 }

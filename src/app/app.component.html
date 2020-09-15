@@ -1,9 +1,15 @@
 <div class="app-container">
   <app-toolbar></app-toolbar>
-  <app-facets [agents]='agents$ | async' [callTypes]='callTypes$ | async'>
+  <app-facets (onAgentSelected)='getCalls($event)' 
+  (onCallSelected)='getCall($event)'
+  (onCallTypeSelected)='getCalls($event)' 
+  [agents]='agents$ | async' 
+  [callTypes]='callTypes$ | async'
+  [calls]='calls$ | async'
+  >
   </app-facets>
   <div class="app-layout">
-    <app-real-call></app-real-call>
-    <app-script-call></app-script-call>
+    <app-real-call [transcript]='(call$ | async)?.transcript'></app-real-call>
+    <app-script-call [script]='(call$ | async)?.script'></app-script-call>
   </div>
 </div>

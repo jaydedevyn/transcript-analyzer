@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Agent } from '../../interfaces/agent';
-import { AgentService } from '../../services/agent/agent.service';
+import { CallType } from '../../interfaces/call-type';
 
 @Component({
   selector: 'app-facets',
@@ -9,6 +9,7 @@ import { AgentService } from '../../services/agent/agent.service';
 })
 export class FacetsComponent implements OnInit {
   @Input() agents: Agent[];
+  @Input() callTypes: CallType[];
 
   constructor() { }
 

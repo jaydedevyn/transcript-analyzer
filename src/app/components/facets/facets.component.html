@@ -1,28 +1,34 @@
 <mat-toolbar>
     <div class="filter-section">
-
+        
         <mat-form-field>
-            <mat-select>
-                <mat-icon matPrefix>people</mat-icon>
-                <mat-option [value]='agent.id' *ngFor='let agent of agents'>{{agent.name}}</mat-option>
+            <mat-icon matPrefix>supervised_user_circle</mat-icon>
+            <mat-select placeholder="Agent" >
+                <mat-option [value]='agent.id' *ngFor='let agent of agents'>
+                    {{agent.name}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field>
+            <mat-icon matPrefix>filter_list</mat-icon>
 
-            <mat-select>
-                <mat-option></mat-option>
+            <mat-select placeholder="All">
+                <mat-option [value]='callType.id' *ngFor='let callType of callTypes'>
+                    {{callType.name}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field>
+            <mat-icon matPrefix>phone</mat-icon>
 
-            <mat-select>
+            <mat-select placeholder="Call">
                 <mat-option></mat-option>
             </mat-select>
         </mat-form-field>
     </div>
     <div class="sensitivity-section">
         <h4>MATCHING SENSITIVITY</h4>
-        <mat-slider></mat-slider>
+        <mat-slider color='primary'></mat-slider>
         <h4>42%</h4>
     </div>
 </mat-toolbar>

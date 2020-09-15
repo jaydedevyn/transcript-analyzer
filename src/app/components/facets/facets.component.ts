@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Agent } from '../../interfaces/agent';
+import { AgentService } from '../../services/agent/agent.service';
 
 @Component({
   selector: 'app-facets',

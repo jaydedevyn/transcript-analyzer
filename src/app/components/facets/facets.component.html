@@ -2,9 +2,9 @@
     <div class="filter-section">
 
         <mat-form-field>
-
             <mat-select>
-                <mat-option *ngFor='let agent of agents'></mat-option>
+                <mat-icon matPrefix>people</mat-icon>
+                <mat-option [value]='agent.id' *ngFor='let agent of agents'>{{agent.name}}</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field>

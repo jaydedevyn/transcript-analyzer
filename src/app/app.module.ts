@@ -8,6 +8,9 @@ import { RealCallModule } from './components/real-call/real-call.module';
 import { ScriptCallModule } from './components/script-call/script-call.module';
 import { FacetsModule } from './components/facets/facets.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { AgentService } from './services/agent/agent.service';
+import { TranscriptService } from './services/transcript/transcript.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToolbarModule,
     ScriptCallModule,
     RealCallModule,
-    FacetsModule
+    FacetsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AgentService, TranscriptService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

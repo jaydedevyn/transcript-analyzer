@@ -1,6 +1,6 @@
 <div class="app-container">
   <app-toolbar></app-toolbar>
-  <app-facets></app-facets>
+  <app-facets [agents]='agents$ | async'></app-facets>
   <div class="app-layout">
     <app-real-call></app-real-call>
     <app-script-call></app-script-call>

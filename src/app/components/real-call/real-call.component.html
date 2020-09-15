@@ -1,23 +1,35 @@
-<table mat-table [dataSource]="transcript" class="mat-elevation-z8">
+<mat-card>
+  <mat-toolbar>
+    <span>Real</span>
+    <span>{{sensitivity}}%</span>
+  </mat-toolbar>
+  <table mat-table [dataSource]="transcript" *ngIf='transcript'>
 
     <!-- Time Column -->
-    <ng-container matColumnDef="position">
+    <ng-container matColumnDef="time">
       <th mat-header-cell *matHeaderCellDef> <strong>Time</strong> </th>
-      <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.time * 1000 | date:'mm:ss'}} </td>
     </ng-container>
-  
+
     <!-- Speaker Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="speaker">
       <th mat-header-cell *matHeaderCellDef> <strong>Speaker</strong> </th>
-      <td mat-cell *matCellDef="let element"> {{element.speaker}} </td>
+      <td  mat-cell *matCellDef="let element"> {{element.speaker}} </td>
     </ng-container>
-  
+
     <!-- Sentence Column -->
-    <ng-container matColumnDef="weight">
+    <ng-container matColumnDef="sentence">
       <th mat-header-cell *matHeaderCellDef> <strong>Sentence</strong> </th>
-      <td mat-cell *matCellDef="let element"> {{element.sentence}} </td>
+      <td  mat-cell *matCellDef="let element">
+        <span class='darken' *ngIf='element.matchingSentence' [matTooltip]='element.similarity + "% with " + "`" + element.matchingSentence + "`"' >{{element.sentence}} </span>
+        <span  *ngIf='!element.matchingSentence'  >{{element.sentence}} </span>
+
+      </td>
     </ng-container>
-  
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr  mat-row *matRowDef="let row; columns: displayedColumns;">
+      {{row}}
+    </tr>
   </table>
+</mat-card>

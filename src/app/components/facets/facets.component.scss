@@ -1,25 +1,29 @@
-.facet-form{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1em;
-    mat-icon{
-        vertical-align: middle;
-        margin-bottom: 8px;
-    }
-    .filter-section {
+mat-toolbar{
+    padding: 2em;
+
+    .facet-form{
         display: grid;
-        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-columns: 1fr 1fr;
         column-gap: 1em;
-        .mat-select-placeholder{
-            color: rgba(0, 0, 0, 0.54);
+        mat-icon{
+            vertical-align: middle;
+            margin-bottom: 8px;
         }
-
+        .filter-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            column-gap: 1em;
+            .mat-select-placeholder{
+                color: rgba(0, 0, 0, 0.54);
+            }
+    
+        }
+        .sensitivity-section {
+            display: grid;
+            grid-template-columns: 2fr 5fr 1fr;
+            column-gap: 1em;
+            align-items: center;
+        }
+    
     }
-    .sensitivity-section {
-        display: grid;
-        grid-template-columns: 2fr 5fr 1fr;
-        column-gap: 1em;
-        align-items: center;
-    }
-
 }

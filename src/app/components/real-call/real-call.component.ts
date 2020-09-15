@@ -6,13 +6,12 @@ import { Transcript } from '../../interfaces/transcript';
   templateUrl: './real-call.component.html',
   styleUrls: ['./real-call.component.scss']
 })
-export class RealCallComponent implements OnInit {
-  displayedColumns: string[] = ['Time', 'Speaker', 'Sentence'];
+export class RealCallComponent  {
+  displayedColumns: string[] = ['time', 'speaker', 'sentence'];
   @Input() transcript: Transcript;
+  @Input() sensitivity: number;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

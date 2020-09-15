@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Agent } from './interfaces/agent';
 import { Call, CallDetail } from './interfaces/call';
@@ -10,17 +10,15 @@ import { ApiService } from './services/api/api.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   agents$: Observable<Agent[]> = this.apiService.getAgents();
   callTypes$: Observable<CallType[]> = this.apiService.getCallTypes();
   calls$: Observable<Call[]>;
   call$: Observable<CallDetail>;
+  sensitivity: number = 38; //slider sensitivity
 
   constructor(private apiService: ApiService) { }
-
-  ngOnInit() {
-  }
 
   setCurrentAgent(agent: Agent) {
     this.apiService.setCurrentAgent(agent);
@@ -31,8 +29,13 @@ export class AppComponent implements OnInit {
     this.calls$ = this.apiService.getCalls(agent, callType);
   }
 
+  updateSensitivity(sensitivity: number) {
+    this.sensitivity = sensitivity;
+  }
+
   getCall(callId: string) {
     this.call$ = this.apiService.getCallById(callId)
+    this.call$.subscribe(console.log)
   }
 
 }

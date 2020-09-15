@@ -1,9 +1,23 @@
 .app-container{
-    .app-layout{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .script-layout{
         padding: 1em;
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 1em;;
-
+    }
+    .init-template{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        p{
+            width: 75%;
+            text-align: center;
+            font-size: 1.25em;
+        }
     }
 }

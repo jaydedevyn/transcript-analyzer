@@ -33,8 +33,8 @@
         </div>
         <div class="sensitivity-section">
             <h4>MATCHING SENSITIVITY</h4>
-            <mat-slider color='primary'></mat-slider>
-            <h4>42%</h4>
+            <mat-slider (change)='emitSliderChange($event)' [value]='sliderValue' #slider color='primary'></mat-slider>
+            <h4>{{slider.percent * 100 | number}}%</h4>
         </div>
     </form>
 </mat-toolbar>

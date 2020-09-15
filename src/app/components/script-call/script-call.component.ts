@@ -7,7 +7,7 @@ import { Script } from '../../interfaces/script';
   styleUrls: ['./script-call.component.scss']
 })
 export class ScriptCallComponent implements OnInit {
-  displayedColumns: string[] = ['Line', 'Speaker', 'Sentence'];
+  displayedColumns: string[] = ['line', 'speaker', 'sentence'];
   @Input() script: Script;
 
   constructor() { }

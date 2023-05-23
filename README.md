@@ -20,6 +20,15 @@ Next, install the required packages using npm:
 npm install
 ```
 
+## Running the FAKE DB
+
+To run the fake db, use the following command:
+
+```
+npm run api
+```
+
+
 ## Running the Application
 
 To run the application, use the following command:
@@ -39,3 +48,4 @@ The app provides a slider for adjusting the "Matching Sensitivity" value, which 
 ## Conclusion
 
 Transcript Analyzer is a powerful tool for sales and support team managers looking to evaluate the quality of outbound calls made by their team members. The app's side-by-side comparison and highlighting of matching sentences provides a quick and easy way to evaluate agent adherence to the call script and overall call quality. With its intuitive interface and easy-to-use filtering and matching sensitivity controls, Transcript Analyzer is the perfect solution for any team looking to improve their outbound call performance.
+
